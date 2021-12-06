@@ -106,6 +106,7 @@ public function hapusKategori()
     $where = ['id' => $this->uri->segment(3)];
     $this->ModelBuku->hapusKategori($where);
     redirect('buku/kategori');
+
 }
 
 public function ubahBuku()
