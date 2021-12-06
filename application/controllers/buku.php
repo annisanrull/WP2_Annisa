@@ -93,7 +93,20 @@ public function kategori()
                $this->load->view('templates/footer');
            } else {
            $data = [
+            'kategori' => $this->input->post('kategori')
+        ];
 
+
+        $this->ModelBuku->simpanKategori($data);
+        redirect('buku/kategori');
+    }
+}
+public function hapusKategori()
+{
+    $where = ['id' => $this->uri->segment(3)];
+    $this->ModelBuku->hapusKategori($where);
+    redirect('buku/kategori');
+}
 
 public function ubahBuku()
     {
